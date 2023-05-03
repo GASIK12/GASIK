@@ -3,6 +3,10 @@
     xmlns:tools="http://schemas.android.com/tools"
     package="com.example.myapplication">
 
+    <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" />
+    <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
+
     <application
         android:allowBackup="true"
         android:dataExtractionRules="@xml/data_extraction_rules"
@@ -10,6 +14,7 @@
         android:icon="@mipmap/ic_launcher"
         android:label="@string/app_name"
         android:supportsRtl="true"
+        android:usesCleartextTraffic="true"
         android:theme="@style/Theme.MyApplication"
         tools:targetApi="31">
 
@@ -32,5 +37,9 @@
             android:name=".Activity.MapActivity"
             android:exported="false" />
     </application>
+
+    <meta-data
+        android:name="com.kakao.sdk.AppKey"
+        android:value="	519214cc7352d65e8113c8c6b2da1438"/>
 
 </manifest>
