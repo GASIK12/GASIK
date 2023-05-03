@@ -20,8 +20,7 @@
             android:id="@+id/toolbar"
             android:layout_width="match_parent"
             android:layout_height="?attr/actionBarSize"
-            app:popupTheme="@style/ThemeOverlay.MaterialComponents.Light"
-            app:title="My App" />
+            app:popupTheme="@style/ThemeOverlay.MaterialComponents.Light"/>
 
     </com.google.android.material.appbar.AppBarLayout>
 
@@ -33,47 +32,36 @@
         app:layout_behavior="@string/appbar_scrolling_view_behavior"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent">
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.0">
 
         <!-- Main Content Views -->
+
         <Button
             android:id="@+id/menuButton"
             android:layout_width="180dp"
-            android:layout_height="240dp"
-            android:layout_marginStart="20dp"
-            android:layout_marginEnd="15dp"
+            android:layout_height="255dp"
             android:text="메뉴"
-            app:layout_constraintBottom_toBottomOf="@+id/recommendButton"
-            app:layout_constraintEnd_toStartOf="@+id/eventButton"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/recommendButton" />
+            tools:layout_editor_absoluteX="16dp"
+            tools:layout_editor_absoluteY="92dp" />
 
         <Button
             android:id="@+id/recommendButton"
             android:layout_width="180dp"
             android:layout_height="120dp"
-            android:layout_marginTop="82dp"
-            android:layout_marginEnd="16dp"
             android:text="추천"
-            app:layout_constraintBottom_toTopOf="@+id/eventButton"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="1.0"
-            app:layout_constraintStart_toEndOf="@+id/menuButton"
-            app:layout_constraintTop_toTopOf="parent" />
+            tools:layout_editor_absoluteX="215dp"
+            tools:layout_editor_absoluteY="90dp" />
 
         <Button
             android:id="@+id/eventButton"
             android:layout_width="180dp"
             android:layout_height="120dp"
-            android:layout_marginTop="0dp"
-            android:layout_marginEnd="16dp"
-            android:layout_marginBottom="409dp"
             android:text="이벤트"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toEndOf="@+id/menuButton"
-            app:layout_constraintTop_toBottomOf="@+id/recommendButton" />
+            tools:layout_editor_absoluteX="215dp"
+            tools:layout_editor_absoluteY="225dp" />
 
 
     </androidx.constraintlayout.widget.ConstraintLayout>
