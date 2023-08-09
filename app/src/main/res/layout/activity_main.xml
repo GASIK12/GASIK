@@ -4,66 +4,86 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    app:constraint_referenced_ids="menuButton, eventButton"
     tools:context=".Activity.MainActivity">
 
-    <!-- Toolbar -->
-    <com.google.android.material.appbar.AppBarLayout
-        android:id="@+id/appbar"
-        android:layout_width="0dp"
-        android:layout_height="wrap_content"
-        android:theme="@style/ThemeOverlay.MaterialComponents.Dark.ActionBar"
+    <include layout="@layout/toolbar"/>
+
+    <Button
+        android:id="@+id/menuButton"
+        android:layout_width="wrap_content"
+        android:layout_height="110dp"
+        android:text="고르기"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toStartOf="@+id/eventButton"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintHorizontal_chainStyle="spread"
+        app:layout_constraintStart_toStartOf="@+id/guideline"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.133" />
+
+    <Button
+        android:id="@+id/eventButton"
+        android:layout_width="wrap_content"
+        android:layout_height="110dp"
+        android:text="이벤트"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toStartOf="@+id/guideline2"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toEndOf="@+id/menuButton"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.133" />
+
+    <Button
+        android:id="@+id/recommandButton"
+        android:layout_width="360dp"
+        android:layout_height="87dp"
+        android:text="추천"
+        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.487"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="@+id/content_main">
+        app:layout_constraintTop_toBottomOf="@+id/menuButton"
+        app:layout_constraintVertical_bias="0.046" />
 
-        <androidx.appcompat.widget.Toolbar
-            android:id="@+id/toolbar"
-            android:layout_width="match_parent"
-            android:layout_height="?attr/actionBarSize"
-            app:popupTheme="@style/ThemeOverlay.MaterialComponents.Light"/>
+    <Spinner
+        android:id="@+id/mainSpinner"
+        android:layout_width="164dp"
+        android:layout_height="76dp"
+        android:layout_marginTop="20dp"
+        android:contentDescription="spinner"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.497"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/recommandButton"
+        app:layout_constraintVertical_bias="0.017" />
 
-    </com.google.android.material.appbar.AppBarLayout>
-
-    <!-- Main Content -->
-    <androidx.constraintlayout.widget.ConstraintLayout
-        android:id="@+id/content_main"
-        android:layout_width="0dp"
-        android:layout_height="0dp"
-        app:layout_behavior="@string/appbar_scrolling_view_behavior"
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/recyclerview_main"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.0">
+        app:layout_constraintTop_toBottomOf="@+id/mainSpinner"
+        tools:ignore="MissingConstraints"></androidx.recyclerview.widget.RecyclerView>
 
-        <!-- Main Content Views -->
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/guideline"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        app:layout_constraintGuide_begin="25dp" />
 
-        <Button
-            android:id="@+id/menuButton"
-            android:layout_width="180dp"
-            android:layout_height="255dp"
-            android:text="메뉴"
-            tools:layout_editor_absoluteX="16dp"
-            tools:layout_editor_absoluteY="92dp" />
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/guideline2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        app:layout_constraintGuide_begin="385dp" />
 
-        <Button
-            android:id="@+id/recommendButton"
-            android:layout_width="180dp"
-            android:layout_height="120dp"
-            android:text="추천"
-            tools:layout_editor_absoluteX="215dp"
-            tools:layout_editor_absoluteY="90dp" />
-
-        <Button
-            android:id="@+id/eventButton"
-            android:layout_width="180dp"
-            android:layout_height="120dp"
-            android:text="이벤트"
-            tools:layout_editor_absoluteX="215dp"
-            tools:layout_editor_absoluteY="225dp" />
-
-
-    </androidx.constraintlayout.widget.ConstraintLayout>
 
 </androidx.constraintlayout.widget.ConstraintLayout>

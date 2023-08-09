@@ -1,3 +1,16 @@
 <resources>
-    <string name="app_name">SikGa</string>
+    <string name="misikga" />
+    <string-array name="sort_type">
+        <item>가까운 순</item>
+        <item>리뷰 순</item>
+        <item>별점 순</item>
+    </string-array>
+    <string-array name="menu_country">
+        <item>한식</item>
+        <item>양식</item>
+        <item>중식</item>
+        <item>일식</item>
+    </string-array>
+    <string-array name="menu_alchol"></string-array>
 </resources>
+
